@@ -83,8 +83,8 @@ impl WriteClient {
     }
 
     async fn post(&self, data: Vec<u8>) -> Response {
-        let org = "machado";
-        let bucket = "antonio";
+        let org = "low";
+        let bucket = "card";
         let params = vec![("org", org), ("bucket", bucket)];
 
         //println!("Sending {} bytes of data...", data.len());

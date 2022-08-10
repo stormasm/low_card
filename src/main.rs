@@ -12,7 +12,7 @@ use reqwest::Response;
 const NUM_CLIENTS: usize = 1;
 
 /// Number of requests made per client
-const NUM_REQUESTS: usize = 5;
+const NUM_REQUESTS: usize = 2;
 
 /// Number of low cardinality tags written
 const NUM_TAGS: usize = 10;
@@ -83,8 +83,8 @@ impl WriteClient {
     }
 
     async fn post(&self, data: Vec<u8>) -> Response {
-        let org = "26f7e5a4b7be365b";
-        let bucket = "917b97a92e883afc";
+        let org = "machado";
+        let bucket = "antonio";
         let params = vec![("org", org), ("bucket", bucket)];
 
         //println!("Sending {} bytes of data...", data.len());
@@ -132,7 +132,7 @@ impl LineProtoGenerator {
         let ts = self.timestamp_generator.fetch_add(1, Ordering::Relaxed);
         write!(w, "m{}", measurement_number).unwrap();
         for tag_num in 0..NUM_TAGS {
-            write!(w, ",tag{}=A_FAIRLY_LONG_TAG_VALUE", tag_num).unwrap();
+            write!(w, ",tag{}=hb", tag_num).unwrap();
         }
         write!(w, " field=4 {}\n", ts).unwrap();
     }

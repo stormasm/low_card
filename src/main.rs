@@ -15,13 +15,13 @@ const NUM_CLIENTS: usize = 1;
 const NUM_REQUESTS: usize = 2;
 
 /// Number of low cardinality tags written
-const NUM_TAGS: usize = 10;
+const NUM_TAGS: usize = 1;
 
 /// Number of distinct measurements written
-const NUM_MEASUREMENTS: usize = 10;
+const NUM_MEASUREMENTS: usize = 1;
 
 /// Number lines of line protocol in each request
-const LINES_PER_REQUEST: usize = 10;
+const LINES_PER_REQUEST: usize = 1;
 
 #[tokio::main]
 async fn main() {
